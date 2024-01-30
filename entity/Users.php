@@ -3,6 +3,7 @@
 namespace app\entity;
 
 use Yii;
+use yii\web\IdentityInterface;
 
 /**
  * This is the model class for table "users".
@@ -15,7 +16,7 @@ use Yii;
  * @property Orders[] $orders
  * @property UserProfile[] $userProfiles
  */
-class Users extends \yii\db\ActiveRecord
+class Users extends \yii\db\ActiveRecord implements IdentityInterface
 {
     /**
      * {@inheritdoc}
@@ -70,5 +71,26 @@ class Users extends \yii\db\ActiveRecord
     public function getUserProfiles()
     {
         return $this->hasMany(UserProfile::class, ['user_id' => 'id']);
+    }
+
+    public static function findIdentity($id)
+    {
+
+    }
+
+    public static function findIdentityByAccessToken($token, $type = null)
+    {
+    }
+
+    public function getId()
+    {
+    }
+
+    public function getAuthKey()
+    {
+    }
+
+    public function validateAuthKey($authKey)
+    {
     }
 }
