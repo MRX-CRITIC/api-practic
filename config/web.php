@@ -19,11 +19,15 @@ $config = [
                     'application/json' => 'yii\web\JsonParser',
                 ]
         ],
+        'response' => [
+            'format' => yii\web\Response::FORMAT_JSON,
+            'charset' => 'UTF-8',
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\entity\Users',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [

@@ -10,7 +10,7 @@ class m240130_144207_UserToken extends Migration
     public function safeUp()
     {
         $this->createTable('users_token', [
-            'ip' => $this->primaryKey(),
+            'id' => $this->primaryKey(),
             'user_agent' => $this->string(200)->null(),
             'user_ip' => $this->string(100)->notNull(),
             'access_token' => $this->string(200)->notNull(),

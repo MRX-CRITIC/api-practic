@@ -8,7 +8,7 @@ class m231212_142151_BD_user_basis extends Migration
     {
         $this->createTable('users', [
             'id' => $this->primaryKey(),
-            'login' => $this->string(50)->unique()->notNull(),
+            'email' => $this->string(100)->unique()->notNull(),
             'password' => $this->string(100)->notNull(),
             'is_admin' => $this->boolean()->defaultValue(false)->notNull(),
         ]);
